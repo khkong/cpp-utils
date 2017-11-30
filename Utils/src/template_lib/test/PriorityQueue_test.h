@@ -7,14 +7,15 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "../Heap.h"
-#include "../Define.h"
+#include "../PriorityQueue.h"
+
+#include "../Compare.h"
 
 using namespace std;
-class Heap_test {
+class PriorityQueue_test {
 public:
     void TEST() {
-        Heap<int> integer_max_heap;
+        PriorityQueue<int> integer_max_heap;
         for (int i = 0; i < 50; i++) {
             integer_max_heap.add(i, integer_max);
             int check = integer_max_heap.peek();
@@ -31,7 +32,7 @@ public:
             }
         }
 
-        Heap<int> integer_min_heap;
+        PriorityQueue<int> integer_min_heap;
         for (int i = 0; i < 50; i++) {
             int tmp = 50 - i;
             integer_min_heap.add(tmp, integer_min);
@@ -48,7 +49,6 @@ public:
                 exit(EXIT_FAILURE);
             }
         }
-
     }
 };
 

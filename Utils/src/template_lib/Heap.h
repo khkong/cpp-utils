@@ -8,15 +8,17 @@
 #ifndef TEMPLATE_LIB_HEAP_HEAP_H_
 #define TEMPLATE_LIB_HEAP_HEAP_H_
 
+#define DEF_SIZE 10
+
 #include <iostream>
 #include <cstring>
-#include "Define.h"
 
 using namespace std;
 
+namespace khkong {
 template<typename _Tp>
 class Heap {
-private/*data member*/:
+protected:
     _Tp *__arr;
     int __arr_size;
     int __arr_rear;
@@ -27,13 +29,14 @@ public/*method func*/:
         this->__arr_size = DEF_SIZE;
         this->__arr_rear = -1;
     }
+
     Heap(int size) {
         this->__arr = new _Tp[size];
         this->__arr_size = size;
         this->__arr_rear = -1;
     }
 
-    ~Heap() {
+    virtual ~Heap() {
         delete[] __arr;
     }
 
@@ -47,26 +50,11 @@ public/*method func*/:
 
     template<typename _Compare>
     bool remove(_Compare &__cmp) {
-        if (__arr_rear <= EMPTY)
+        if (__arr_rear <= -1)
             return false;
         __arr[0] = __arr[__arr_rear--];
         removeReconstruction(0, __arr_rear, __cmp);
         return true;
-    }
-
-    template<typename _Compare>
-    _Tp pop(_Compare &__cmp) {
-        if (__arr_rear <= EMPTY)
-            return (_Tp) NULL;
-        _Tp item = __arr[0];
-        remove(__cmp);
-        return item;
-    }
-
-    _Tp peek() {
-        if (__arr_rear <= EMPTY)
-            return (_Tp) NULL;
-        return __arr[0];
     }
 
     void clear() {
@@ -82,27 +70,23 @@ public/*method func*/:
         __arr = __newArr;
     }
 
-    template<typename _Compare>
-    void sort(_Compare &__cmp) {
-        for (int i = __arr_rear; i > EMPTY; i--) {
-            _Tp tmp = __arr[0];
-            __arr[0] = __arr[i - 1];
-            __arr[i - 1] = tmp;
-            removeReconstruction(0, i - 1, __cmp);
-        }
-    }
-
     int size() {
         return __arr_rear + 1;
     }
 
-    void print() {
-        cout << "__arr : ";
-        for (int i = 0; i <= __arr_rear; i++) {
-            cout << __arr[i];
-            cout << " ";
+    _Tp* getHeap() {
+        return __arr;
+    }
+
+    template<typename _Compare>
+    _Tp* sortHeap(_Compare __cmp) {
+        for (int i = this->__arr_rear; i > -1; i--) {
+            _Tp tmp = this->__arr[0];
+            this->__arr[0] = this->__arr[i - 1];
+            this->__arr[i - 1] = tmp;
+            removeReconstruction(0, i - 1, __cmp);
         }
-        cout << endl;
+        return __arr;
     }
 
 private/*method func*/:
@@ -149,10 +133,9 @@ private/*method func*/:
             int tmp = __arr[bestChild];
             __arr[bestChild] = __arr[idx];
             __arr[idx] = tmp;
-            removeReconstruction(bestChild, __cmp);
+            removeReconstruction(bestChild, limit, __cmp);
         }
     }
-
 };
-
+}
 #endif /* TEMPLATE_LIB_HEAP_HEAP_H_ */
