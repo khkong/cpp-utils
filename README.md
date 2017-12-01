@@ -6,4 +6,4 @@ Personal c ++ coding skills.
 - heap.h : Implemented the heap as a template class.
 - priority_queue : I implemented the priority queue as a template class using 'heap.h'.
 - sort.h : Sort algorithm. heap sort, quick sort, etc.
-- compare.h : Variables used for comparison operations.
+- compare.h : Variables used for comparison operators.
