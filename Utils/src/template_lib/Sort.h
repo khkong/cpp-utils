@@ -24,4 +24,28 @@ void heap_sort(_AccessIterator& __first, _AccessIterator& __last, _Compare &__cm
     memcpy(&__first, __new_arr, __arr_size * sizeof(_AccessIterator));
 }
 
+void quick_sort(vector<int>& vec, int left, int right) {
+    int pivot = vec[(left + right) >> 1];
+    int i = left;
+    int j = right;
+    do {
+        while (vec[i] < pivot)
+            i++;
+        while (vec[j] > pivot)
+            j--;
+        if (i <= j) {
+            int temp = vec[i];
+            vec[i] = vec[j];
+            vec[j] = temp;
+            i++;
+            j--;
+        }
+    } while (i <= j);
+
+    if (left < j)
+        quick_sort(vec, left, j);
+    if (right > i)
+        quick_sort(vec, i, right);
+}
+
 #endif /* TEMPLATE_LIB_TEST_HEAPSORT_H_ */

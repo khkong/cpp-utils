@@ -9,7 +9,8 @@
 #define TEMPLATE_LIB_PRIORITYQUEUE_H_
 #include "Heap.h";
 
-template<typename _Tp> class PriorityQueue: public khkong::Heap<_Tp> {
+template<typename _Tp>
+class PriorityQueue: public khkong::Heap<_Tp> {
 public/*method func*/:
     PriorityQueue() {
         this->__arr = new _Tp[DEF_SIZE];
