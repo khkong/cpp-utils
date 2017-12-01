@@ -34,7 +34,14 @@ public:
     smart_string operator*(string& str) const;
     smart_string operator*(const string& str) const;
 
+    /**
+     * complexity : O(N)
+     */
     int length() const;
+
+    /**
+     * complexity : O(N)
+     */
     char* charAt(int index) const;
     void append(char* str);
     void append(const char* str);

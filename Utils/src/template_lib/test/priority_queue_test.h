@@ -4,12 +4,13 @@
  *  Created on: 2017. 11. 30.
  *      Author: khkong
  */
+#include "../priority_queue.h"
+
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "../PriorityQueue.h"
 
-#include "../Compare.h"
+#include "../compare.h"
 
 using namespace std;
 class PriorityQueue_test {

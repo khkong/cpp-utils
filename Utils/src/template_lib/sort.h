@@ -1,5 +1,5 @@
 /*
- * HeapSort.h
+ * Sort.h
  *
  *  Created on: 2017. 11. 30.
  *      Author: khkong
@@ -8,7 +8,8 @@
 #ifndef TEMPLATE_LIB_TEST_HEAPSORT_H_
 #define TEMPLATE_LIB_TEST_HEAPSORT_H_
 #include <vector>
-#include "../template_lib/Heap.h"
+
+#include "heap.h"
 
 template<typename _AccessIterator, typename _Compare> //
 void heap_sort(_AccessIterator& __first, _AccessIterator& __last, _Compare &__cmp) {
@@ -47,5 +48,12 @@ void quick_sort(vector<int>& vec, int left, int right) {
     if (right > i)
         quick_sort(vec, i, right);
 }
+
+template<typename _AccessIterator, typename _Compare> //
+void quick_sort(_AccessIterator& __first, _AccessIterator& __last, _Compare &__cmp) {
+
+}
+
+
 
 #endif /* TEMPLATE_LIB_TEST_HEAPSORT_H_ */

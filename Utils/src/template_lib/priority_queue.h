@@ -5,9 +5,9 @@
  *      Author: khkong
  */
 
-#ifndef TEMPLATE_LIB_PRIORITYQUEUE_H_
-#define TEMPLATE_LIB_PRIORITYQUEUE_H_
-#include "Heap.h";
+#ifndef TEMPLATE_LIB_PRIORITY_QUEUE_H_
+#define TEMPLATE_LIB_PRIORITY_QUEUE_H_
+#include "heap.h"
 
 template<typename _Tp>
 class PriorityQueue: public khkong::Heap<_Tp> {
@@ -44,4 +44,4 @@ public/*method func*/:
 
 };
 
-#endif /* TEMPLATE_LIB_PRIORITYQUEUE_H_ */
+#endif /* TEMPLATE_LIB_PRIORITY_QUEUE_H_ */

@@ -4,10 +4,10 @@
  *  Created on: 2017. 11. 20.
  *      Author: khkong
  */
-#include "template_lib/test/PriorityQueue_test.h"
 #include <vector>
 
 #include "lib/smart_string.h"
+#include "template_lib/test/priority_queue_test.h"
 
 int main(int argc, char **argv) {
     smart_string test = "test";
