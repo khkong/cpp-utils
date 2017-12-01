@@ -16,5 +16,6 @@ int main(int argc, char **argv) {
     cout << test.c_str() << endl;
     test = "공경환+!abs";
     cout << test.length() << endl;
-    string a;
+    char* a = test.charAt(2);
+    cout << a << endl;
 }

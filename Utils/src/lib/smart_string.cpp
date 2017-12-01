@@ -149,8 +149,8 @@ char* smart_string::charAt(int index) const {
             k = 1;
         }
     }
-    char* ret_str = new char[5];
+    char* ret_str = new char[k + 1];
     strncpy(ret_str, &mBuffer[j - k], k);
-    ret_str[k - 1] = '\0';
+    ret_str[k] = '\0';
     return ret_str;
 }
