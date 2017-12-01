@@ -54,6 +54,4 @@ void quick_sort(_AccessIterator& __first, _AccessIterator& __last, _Compare &__c
 
 }
 
-
-
 #endif /* TEMPLATE_LIB_TEST_HEAPSORT_H_ */
