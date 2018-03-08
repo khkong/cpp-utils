@@ -1,5 +1,5 @@
 # cpp-utils
-Personal c ++ coding skills.
+Personal c ++ coding skills.. and school assignments.
 
 # File description
 - smart_string.h : The encoding method is utf-8, and can be multibyte-capable. However, the time complexity increases from O (1) to O (n). For example, length (), at (), etc. It might be better to just write "wstring" instead of "smart_string"
