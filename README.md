@@ -1,4 +1,4 @@
-# cpp-utils
+# study-cpp-structure
 Personal c ++ coding skills.. and school assignments.
 
 # File description
