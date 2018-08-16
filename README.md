@@ -1,4 +1,4 @@
-# study-cpp-structure
+# study-data-structure
 Personal c ++ coding skills.. and school assignments.
 
 # File description
